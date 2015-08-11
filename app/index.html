@@ -6,12 +6,13 @@
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
-<body ng-app="nodebot" ng-controller="NbController">
+<body ng-app="nodebot" ng-controller="NbController" ng-cloak="ng-cloak" class="ng-cloak">
 <div class="container">
     <i class="fa fa-angle-up" ng-click="movements.moveForward()"></i>
     <i class="fa fa-angle-left" ng-click="movements.turnLeft()"></i>
     <i class="fa fa-angle-down" ng-click="movements.moveBackward()"></i>
     <i class="fa fa-angle-right" ng-click="movements.turnRight()"></i>
+    <i class="fa stop" ng-click="movements.stop()">STOP</i>
 </div>
 </body>
 <script src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.3/angular.min.js"></script>
