@@ -1,5 +1,6 @@
-var app = require('express')();
-var io = require('socket.io').(app.listen(3000));
+var express = require('express');
+var app = express();
+var io = require('socket.io')(app.listen(3000));
 var five = require('johnny-five');
 
 //Setting the path to static assets
@@ -14,17 +15,17 @@ var board = new five.Board({
     repl: false
 });
 
-io.on('connection', function (socket) {
-    board.on('ready', function () {
-        var speed, commands, motors;
-        motors = {
-            a: new five.Motor([3, 12]),
-            b: new five.Motor([11, 13])
-        };
+board.on('ready', function () {
+    var speed, commands, motors;
+    motors = {
+        a: new five.Motor([3, 12]),
+        b: new five.Motor([11, 13])
+    };
 
-        commands = null;
-        speed = 255;
+    commands = null;
+    speed = 255;
 
+    io.on('connection', function (socket) {
         socket.on('stop', function () {
             speed = 255;
             motors.a.fwd(speed);
@@ -56,5 +57,5 @@ io.on('connection', function (socket) {
             motors.a.rev(aSpeed);
             motors.b.fwd(bSpeed);
         });
-    })
+    });
 });

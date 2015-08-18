@@ -2,7 +2,6 @@ angular.module('nodebot',[])
     .controller('NbController',['$scope',function($scope){
         var socket = io();
 
-
         $scope.movements = {
             moveForward : function(){
                 socket.emit('start');
