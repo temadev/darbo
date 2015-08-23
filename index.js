@@ -27,9 +27,8 @@ board.on('ready', function () {
 
     io.on('connection', function (socket) {
         socket.on('stop', function () {
-            speed = 255;
-            motors.a.fwd(speed);
-            motors.b.fwd(speed);
+            motors.a.stop();
+            motors.b.stop();
         });
 
         socket.on('start', function () {
