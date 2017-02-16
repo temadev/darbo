@@ -1,39 +1,39 @@
 var socket = io();
 
-function moveForward(){
-    socket.emit('forward');
+function moveForward() {
+  socket.emit('forward');
 }
 
-function turnRight(){
-    socket.emit('right');
+function turnRight() {
+  socket.emit('right');
 }
 
-function turnLeft(){
-    socket.emit('left');
+function turnLeft() {
+  socket.emit('left');
 }
 
-function moveReverse(){
-    socket.emit('reverse');
+function moveReverse() {
+  socket.emit('reverse');
 }
 
-function stop(){
-    socket.emit('stop');
+function stop() {
+  socket.emit('stop');
 }
 
-function leftWheel(){
-    socket.emit('left-wheel');
+function leftWheel() {
+  socket.emit('left-wheel');
 }
 
-function rightWheel(){
-    socket.emit('right-wheel');
+function rightWheel() {
+  socket.emit('right-wheel');
 }
 
-function off(){
-    socket.emit('off');
+function off() {
+  socket.emit('off');
 }
 
-function onForward(){
-    socket.emit('on-forward');
+function onForward() {
+  socket.emit('on-forward');
 }
 
 document.getElementById('forward').onclick = moveForward;
