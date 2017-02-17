@@ -66,6 +66,15 @@ pm2 startup
 
 Execute the command from output, reboot, open client at `<your_raspberry_ip>:3000` and enjoy.
 
+## Trouble Shooting
+
+If the above didn't work as expected, make sure that StandardFirmataPlus is installed on the board:
+
+- Download Arduino IDE
+- Plug in your Arduino or Arduino compatible microcontroller via USB
+- Open the Arduino IDE, select: File > Examples > Firmata > StandardFirmataPlus
+- Click the "Upload" button.
+- If the upload was successful, the board is now prepared and you can close the Arduino IDE.
 
 ## Useful links
 Setting up the Hardware: https://www.sitepoint.com/controlling-a-motorbot-using-arduino-and-node-js/
