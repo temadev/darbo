@@ -48,6 +48,24 @@ node index.js
 
 Open `<your_raspberry_ip>:3000` to take control on your bot.
 
+### Configure `pm2` boot on startup
+
+Install `pm2`:
+```
+npm install pm2 -g
+```
+
+Start and Daemonize application:
+
+```
+cd ~/darbo
+pm2 start index.js --name="darbo" --watch
+pm2 save
+pm2 startup
+```
+
+Execute the command from output, reboot, open client at `<your_raspberry_ip>:3000` and enjoy.
+
 
 ## Useful links
-Starting tutorial: https://www.sitepoint.com/controlling-a-motorbot-using-arduino-and-node-js/
+Setting up the Hardware: https://www.sitepoint.com/controlling-a-motorbot-using-arduino-and-node-js/
